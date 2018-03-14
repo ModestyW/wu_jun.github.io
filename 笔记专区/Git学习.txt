@@ -1,0 +1,30 @@
+常用命令：
+	1.git add <文件名>	多个文件，可用空格间隔开
+	2.git status		查看仓库当前状态
+	3.git diff <文件名>	查看文件的修改记录
+	4.git commit -m '注释'	-m的意思是添加注解
+	5.git log 		显示由近到远的提交日志
+	6.git reset --hard HEAD^版本回退，一个^是代表回退到上个版本，两个^代表回退到上上个版本，2以上使用数字（HEAD~100）
+				HEAD代表着版本号，也指的是SHA1的值
+	7.git reflog 		和git log不同的是，git reflog记录着每次的操作记录，包括删除删除的。
+	8.git checkout --<文件名>工作区的回退，回退到的位置是最近一个git add 或git commit的位置
+	9.git reset HEAD <文件名>reset不仅可以回退版本，也可以把暂存区的修改给撤销掉，重新放回工作区
+	10.git rm <文件名>	删除文件，删除之后，记得commit
+
+	11.Github中的一些基本操作： 
+		要关联一个远程库，使用命令git remote add origin git@server-name:path/repo-name.git；
+		关联后，使用命令git push -u origin master第一次推送master分支的所有内容；
+		此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改。
+	12.git add中的一些小操作：
+		git add xx命令可以将xx文件添加到暂存区，如果有很多改动可以通过 git add -A .来一次添加所有改变的文件。
+		注意 -A 选项后面还有一个句点。 git add -A表示添加所有内容， git add . 表示添加新文件和编辑过的文件不包括		删除的文件; git add -u 表示添加编辑或者删除的文件，不包括新添加的文件。
+	13.Git中分支的基本操作：
+		查看分支：git branch
+		创建分支：git branch <name>
+		切换分支：git checkout <name>
+		创建+切换分支：git checkout -b <name>
+		合并某分支到当前分支：git merge <name>
+		删除分支：git branch -d <name>
+	14.Git还提供了一个stash功能，可以把当前工作现场“储藏”起来，等以后恢复现场后继续工作;
+	   一是用git stash apply恢复，但是恢复后，stash内容并不删除，你需要用git stash drop来删除。
+	15.git tag 标签
